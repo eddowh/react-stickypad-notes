@@ -10,7 +10,7 @@ var AppActions = require('../actions/AppActions');
 var AppStore = require('../stores/AppStore');
 
 // Components
-// var SubComponent = require('./SubComponent.jsx');
+var AddNoteForm = require('./AddNoteForm.jsx');
 
 
 function getAppState() {
@@ -47,7 +47,7 @@ var App = React.createClass({
                         <div className="off-canvas position-left reveal-for-large" data-off-canvas data-position="left">
                             <div className="row column">
                                 <br />
-                                // ADD NOTE FORM
+                                <AddNoteForm />
                             </div>
                         </div>
                         <div className="off-canvas-content" data-off-canvas-content>
