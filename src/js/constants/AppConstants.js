@@ -1,3 +1,3 @@
 module.exports = {
-    CONSTANT: 'CONSTANT'
+    ADD_NOTE: 'ADD_NOTE'
 }

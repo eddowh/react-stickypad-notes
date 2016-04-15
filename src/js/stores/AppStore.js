@@ -7,20 +7,18 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 
 var CHANGE_EVENT = 'change';
 
-// define where to store your fetched data
-// initialize as empty
-// var obj = [] | {} | ''
+
+var _notes = []
 
 
 var AppStore = assign({}, EventEmitter.prototype, {
 
-    // define getter and setter methods
-    setObj: function(argument) {
-        return;
+    addNote: function(note) {
+        _notes.push(note);
     },
 
-    getObj: function() {
-        return;
+    getNotes: function() {
+        return _notes;
     },
 
     emitChange: function() {
@@ -44,8 +42,18 @@ AppDispatcher.register(function(payload) {
 
     switch (action.actionType) {
 
-        // case AppConstants.A_CONSTANT:
-        // ...
+        case AppConstants.ADD_NOTE:
+            console.log("Adding note ...");
+
+            // Store Save
+            AppStore.addNote(action.note);
+
+            // API Save
+            // TODO
+
+            // Emit
+            AppStore.emit(CHANGE_EVENT);
+            break;
 
     }
 

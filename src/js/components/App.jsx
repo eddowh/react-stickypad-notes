@@ -15,7 +15,7 @@ var AddNoteForm = require('./AddNoteForm.jsx');
 
 function getAppState() {
     return {
-
+        notes: AppStore.getNotes()
     };
 }
 
@@ -40,6 +40,7 @@ var App = React.createClass({
     },
 
     render: function() {
+        console.log(this.state.notes);
         return (
             <div>
                 <div className="off-canvas-wrapper">
