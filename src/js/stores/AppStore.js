@@ -25,6 +25,11 @@ var AppStore = assign({}, EventEmitter.prototype, {
         _notes = notes;
     },
 
+    removeNote: function(noteId) {
+        var index = _notes.findIndex(x => x._id.$oid === noteId);
+        _notes.splice(index, 1);
+    },
+
     emitChange: function() {
         this.emit(CHANGE_EVENT);
     },
@@ -64,6 +69,19 @@ AppDispatcher.register(function(payload) {
 
             // Store Save
             AppStore.setNotes(action.notes);
+
+            // Emit
+            AppStore.emit(CHANGE_EVENT);
+            break;
+
+        case AppConstants.REMOVE_NOTE:
+            console.log("Removing note ...");
+
+            // Store Remove
+            AppStore.removeNote(action.noteId);
+
+            // Store Remove
+            AppAPI.removeNote(action.noteId);
 
             // Emit
             AppStore.emit(CHANGE_EVENT);
