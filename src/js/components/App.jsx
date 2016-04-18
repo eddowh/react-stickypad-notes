@@ -11,6 +11,7 @@ var AppStore = require('../stores/AppStore');
 
 // Components
 var AddNoteForm = require('./AddNoteForm.jsx');
+var NoteList = require('./NoteList.jsx');
 
 
 function getAppState() {
@@ -40,7 +41,7 @@ var App = React.createClass({
     },
 
     render: function() {
-        console.log(this.state.notes);
+        // console.log(this.state.notes);
         return (
             <div>
                 <div className="off-canvas-wrapper">
@@ -52,7 +53,7 @@ var App = React.createClass({
                             </div>
                         </div>
                         <div className="off-canvas-content" data-off-canvas-content>
-                            // NOTELIST
+                            <NoteList notes={this.state.notes} />
                         </div>
                     </div>
                 </div>
