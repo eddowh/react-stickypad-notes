@@ -33,6 +33,10 @@ gulp.task('copy', function() {
     gulp.src('src/js/vendors/*.*')
         .pipe(gulp.dest('dist/js'));
 
+    // images
+    gulp.src('src/images/*.*')
+        .pipe(gulp.dest('dist/images'));
+
 });
 
 

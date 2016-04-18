@@ -14,8 +14,12 @@ var Note = React.createClass({
 
     render: function() {
         return (
-            <div className="row small-up-2 medium-up-3 large-up-4">
-                // TODO
+            <div className="column">
+                <div className="note">
+                    <p>
+                        {this.props.note.text}
+                    </p>
+                </div>
             </div>
         );
     }
