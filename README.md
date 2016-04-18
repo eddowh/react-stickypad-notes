@@ -1,6 +1,6 @@
 # Project Description
 
-An application where you can create simple todos or tasks on a sticky note. Data will be persisted to MongoLab.
+An application where you can create simple todos or tasks on a sticky note. Data will be persisted to [MongoLab](https://mlab.com/welcome/).
 
 # What You Will Learn
 
@@ -13,7 +13,7 @@ An application where you can create simple todos or tasks on a sticky note. Data
 
 Before running the following commands, make sure you have navigated into the project root directory first:
 
-    $ cd react-TODO
+    $ cd react-stickypad-notes
 
 Install the `npm` modules:
 
