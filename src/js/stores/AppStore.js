@@ -49,7 +49,7 @@ AppDispatcher.register(function(payload) {
             AppStore.addNote(action.note);
 
             // API Save
-            // TODO
+            AppAPI.addNote(action.note);
 
             // Emit
             AppStore.emit(CHANGE_EVENT);
